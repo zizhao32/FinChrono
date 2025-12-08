@@ -4,10 +4,10 @@
 
 This repository currently hosts the first released dataset:
 
-> **FinChronoDate** — a sentence-level dataset for **precise calendar date resolution**  
+> **FinChrono** — a sentence-level dataset for **precise calendar date resolution**  
 > in **English financial and economic news and reports**.
 
-FinChronoDate is designed for training and evaluating models that can:
+FinChrono is designed for training and evaluating models that can:
 
 - detect time expressions in a sentence,
 - reason about missing or implicit temporal information using a reference date,
@@ -17,7 +17,7 @@ FinChronoDate is designed for training and evaluating models that can:
 
 ## Table of Contents
 
-1. [FinChronoDate Overview](#1-finchronodate-overview)  
+1. [FinChrono Overview](#1-finchrono-overview)  
 2. [Data Source & Granularity](#2-data-source--granularity)  
 3. [Data Schema](#3-data-schema)  
    - [id](#31-id-string)  
@@ -41,9 +41,9 @@ FinChronoDate is designed for training and evaluating models that can:
 
 ---
 
-## 1. FinChronoDate Overview
+## 1. FinChrono Overview
 
-**FinChronoDate** is a **sentence-level** dataset for **calendar date resolution** from natural-language time expressions in the domain of **financial and economic news**.
+**FinChrono** is a **sentence-level** dataset for **calendar date resolution** from natural-language time expressions in the domain of **financial and economic news**.
 
 Each sample consists of:
 
@@ -338,9 +338,9 @@ The actual file layout may vary, but a typical structure could be:
 
     FinChrono/
     ├── data/
-    │   ├── finchronodate_train.jsonl   # training split (sentence-level samples)
-    │   ├── finchronodate_dev.jsonl     # development / validation split
-    │   └── finchronodate_test.jsonl    # test split
+    │   ├── finchrono_train.jsonl   # training split (sentence-level samples)
+    │   ├── finchrono_dev.jsonl     # development / validation split
+    │   └── finchrono_test.jsonl    # test split
     ├── scripts/
     │   └── examples/                   # example loading / evaluation scripts (optional)
     └── README.md                       # this file
@@ -364,7 +364,7 @@ for the exact filenames and splits that are currently provided.
                     continue
                 yield json.loads(line)
 
-    train_path = "data/finchronodate_train.jsonl"   # adjust to actual path
+    train_path = "data/finchrono_train.jsonl"   # adjust to actual path
     for sample in load_jsonl(train_path):
         sentence = sample["sentence"]
         time_sub = sample["time_expression_substring"]
@@ -387,7 +387,7 @@ for the exact filenames and splits that are currently provided.
 
 ## 7. Intended Use
 
-FinChronoDate is intended for research and development on:
+FinChrono is intended for research and development on:
 
 - **Time expression parsing and normalization** in financial text,
 - **Calendar date reasoning** from under-specified expressions (missing year, month, or day),
